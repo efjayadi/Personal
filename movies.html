@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://alwingulla.com/88/tag.min.js" data-zone="109697" async data-cfasync="false"></script>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Movies</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+
+        #movies-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .movie-card {
+            background-color: #111111;
+            color: white;
+            display: flex;
+            align-items: center;
+            border-radius: 6px;
+            overflow: hidden;
+            max-width: 1080px;
+            width: 100%;
+            margin: 14px auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            position: relative;
+            min-height: 300px;
+        }
+
+            .movie-card:hover {
+                transform: scale(1.02);
+            }
+
+        .movie-poster {
+            flex: 0 0 100px;
+            height: 240px;
+            object-fit: cover;
+            margin-left: 20px;
+            border-radius: 2px;
+        }
+
+        .movie-info {
+            padding: 24px;
+            flex-grow: 1;
+            max-width: 50%; /* Description occupies 60% of the width */
+        }
+
+            .movie-info h2 {
+                font-size: 24px;
+                margin: 0;
+                margin-bottom: 10px;
+            }
+
+            .movie-info p {
+                margin: 5px 0;
+                color: #ccc;
+            }
+
+            .movie-info .release-date,
+            .movie-info .runtime {
+                color: white; /* Set to white for better visibility */
+                font-size: 16px;
+            }
+
+            .movie-info .runtime {
+                padding: 5px 8px;
+                border: 1px solid white;
+                border-radius: 4px;
+                display: inline-block;
+                font-weight: normal; /* Make the text regular */
+                margin-top: 8px;
+            }
+
+            .movie-info .genre {
+                margin-left: 10px;
+                color: #aaa; /* Slightly dim color for genres */
+                font-size: 15px;
+            }
+
+        .movie-cover-fade {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 40%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+            -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        }
+
+        .movie-actions {
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+            .movie-actions i {
+                margin-right: 15px;
+                cursor: pointer;
+                color: #aaa;
+                font-size: 20px;
+            }
+
+                .movie-actions i:hover {
+                    color: white;
+                }
+    </style>
+    <!-- Add FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <body class="index-page">
+
+        <header id="header" class="header d-flex align-items-center fixed-top">
+            <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- <img src="assets/img/logo.png" alt=""> -->
+                    <h1 class="sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:40px;">.</font></h1>
+                </a>
+
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li class="dropdown">
+                            <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="#">Dropdown 1</a></li>
+                                <li class="dropdown">
+                                    <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                    <ul>
+                                        <li><a href="#">Deep Dropdown 1</a></li>
+                                        <li><a href="#">Deep Dropdown 2</a></li>
+                                        <li><a href="#">Deep Dropdown 3</a></li>
+                                        <li><a href="#">Deep Dropdown 4</a></li>
+                                        <li><a href="#">Deep Dropdown 5</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Dropdown 2</a></li>
+                                <li><a href="#">Dropdown 3</a></li>
+                                <li><a href="#">Dropdown 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+
+            </div>
+        </header>
+
+        <main class="main">
+            <h1 style="text-align:center;">rekomendasi film</h1>
+            <div id="movies-container">
+                <!-- Movie cards will be dynamically added here -->
+            </div>
+        </main>
+        <footer id="footer" class="footer dark-background">
+            <div class="container">
+                <h3 class="sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:40px;">.</font></h3>
+                <p>From custom websites to branded content, I provide comprehensive digital solutions tailored to your business needs. With a focus on quality, creativity, and results, I help you enhance your online presence and drive growth. Let’s work together to build something extraordinary and elevate your brand to the next level!</p>
+                <div class="social-links d-flex justify-content-center">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-skype"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+                <div class="container">
+                    <div class="copyright">
+                        <span>Copyright</span> <strong class="px-1 sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:20px;">.</font></strong> <span>All Rights Reserved</span>
+                    </div>
+                    <div class="credits" style="opacity:3%;">
+                        <!-- All the links in the footer should remain intact. -->
+                        <!-- You can delete the links only if you've purchased the pro version. -->
+                        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scroll Top -->
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Preloader -->
+        <div id="preloader"></div>
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/typed.js/typed.umd.js"></script>
+        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+        <!-- Main JS File -->
+        <script src="assets/js/main.js"></script>
+        <script>
+            const apiKey = 'cac04f877c2c8ae78758f05b158d796d';  // Your API key
+            const moviesContainer = document.getElementById('movies-container');
+
+            // List of movie titles you want to display
+            const movieTitles = ['Flow', 'The Boy and heron', 'civil war', 'bullet train', 'wolfs'];
+
+            // Function to fetch and display movies from TMDb API
+            function fetchMovies() {
+                movieTitles.forEach(title => {
+                    // Fetch specific movie by title from TMDb API
+                    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${title}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.results.length === 0) {
+                                moviesContainer.innerHTML += `<p>No results found for "${title}".</p>`;
+                                return;
+                            }
+
+                            const movie = data.results[0]; // Get the first result
+
+                            // Fetch genres from the TMDb API (using genre IDs)
+                            fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`)
+                                .then(response => response.json())
+                                .then(genreData => {
+                                    const genreMap = {};
+                                    genreData.genres.forEach(genre => {
+                                        genreMap[genre.id] = genre.name;
+                                    });
+
+                                    const movieGenres = movie.genre_ids.map(id => genreMap[id]).join(', ');
+
+                                    // Create and display the movie card
+                                    const movieCard = `
+                                                            <div class="movie-card">
+                                                                <img class="movie-poster" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
+                                                                <div class="movie-info">
+                                                                    <h2>${movie.title}</h2>
+                                                                    <p class="release-date">Release Date: ${movie.release_date}</p>
+                                                                    <p class="runtime">Download</p>
+                                                                    <span class="genre">${movieGenres}</span>
+                                                                    <p>${movie.overview}</p>
+                                                                    <div class="movie-actions">
+                                                                        <i class="fas fa-share-alt" onclick="shareMovie('${movie.title}')"></i>
+                                                                        <i class="fas fa-comment-alt" onclick="commentMovie('${movie.title}')"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="movie-cover-fade" style="background-image: url('https://image.tmdb.org/t/p/w780${movie.backdrop_path}');"></div>
+                                                            </div>
+                                                        `;
+                                    moviesContainer.innerHTML += movieCard;
+                                })
+                                .catch(error => console.error('Error fetching genre data:', error));
+                        })
+                        .catch(error => console.error('Error fetching movie data:', error));
+                });
+            }
+
+
+            // Fetch movies on page load
+            fetchMovies();
+        </script>
+
+    </body>
+</html>
