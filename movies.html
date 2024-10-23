@@ -29,108 +29,160 @@
     <link href="assets/css/main.css" rel="stylesheet">
 
     <style>
+    #movies-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center cards for mobile */
+    }
 
-        #movies-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+    .movie-card {
+        background-color: #1f1f1f;
+        color: white;
+        display: flex;
+        align-items: center;
+        border-radius: 6px;
+        overflow: hidden;
+        max-width: 1080px; /* Default for larger screens */
+        width: 100%; /* Full width on small screens */
+        margin: 14px auto;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+        position: relative;
+        min-height: 300px;
+    }
 
+    .movie-card:hover {
+        transform: scale(1.02);
+    }
+
+    .movie-poster {
+        flex: 0 0 100px;
+        height: 240px;
+        object-fit: cover;
+        margin-left: 20px;
+        border-radius: 2px;
+    }
+
+    .movie-info {
+        padding: 24px;
+        flex-grow: 1;
+        max-width: 50%; /* Description occupies 50% of the width */
+    }
+
+    .movie-info h1 {
+        font-size: 30px;
+        margin: 0 0 10px;
+        font-weight: bold;
+    }
+
+    .movie-info p {
+        margin: 5px 0;
+        color: #ccc;
+    }
+
+    .movie-info .release-date,
+    .movie-info .runtime {
+        color: white; /* Set to white for better visibility */
+        font-size: 16px;
+    }
+
+    .movie-info .runtime {
+        padding: 5px 8px;
+        border: 1px solid white;
+        border-radius: 4px;
+        display: inline-block;
+        font-weight: normal; /* Make the text regular */
+        margin-top: 8px;
+    }
+
+    .movie-info .genre {
+        margin-left: 10px;
+        color: #aaa; /* Slightly dim color for genres */
+        font-size: 15px;
+    }
+
+    .movie-cover-fade {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 40%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    }
+
+    .movie-actions {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    .movie-actions i {
+        margin-right: 15px;
+        cursor: pointer;
+        color: #aaa;
+        font-size: 20px;
+    }
+
+    .movie-actions i:hover {
+        color: white;
+    }
+
+    /* Media query for mobile devices */
+    @media (max-width: 768px) {
         .movie-card {
-            background-color: #1f1f1f;
-            color: white;
-            display: flex;
-            align-items: center;
-            border-radius: 6px;
-            overflow: hidden;
-            max-width: 1080px;
-            width: 100%;
-            margin: 14px auto;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-            position: relative;
-            min-height: 300px;
+            max-width: 90%; /* Full width on mobile */
+            margin: 10px 0; /* Reduced margin */
+            min-height: 250px; /* Adjusted min-height */
         }
-
-            .movie-card:hover {
-                transform: scale(1.02);
-            }
 
         .movie-poster {
-            flex: 0 0 100px;
-            height: 240px;
-            object-fit: cover;
-            margin-left: 20px;
-            border-radius: 2px;
+            flex: 0 0 80px; /* Smaller poster size */
+            height: 120px; /* Reduced height */
+            margin-left: 10px; /* Reduced margin */
         }
 
         .movie-info {
-            padding: 24px;
-            flex-grow: 1;
-            max-width: 50%; /* Description occupies 60% of the width */
+            padding: 16px; /* Reduced padding */
+            max-width: 100%; /* Full width for mobile */
         }
 
-            .movie-info h1 {
-                font-size: 30px;
-                margin: 0;
-                margin-bottom: 10px;
-                font-weight:bold;
-            }
+        .movie-info h1 {
+            font-size: 20px; /* Reduced font size */
+            margin: 0 0 8px; /* Adjusted margins */
+        }
 
-            .movie-info p {
-                margin: 5px 0;
-                color: #ccc;
-            }
+        .movie-info p {
+            margin: 4px 0; /* Reduced margins */
+        }
 
-            .movie-info .release-date,
-            .movie-info .runtime {
-                color: white; /* Set to white for better visibility */
-                font-size: 16px;
-            }
+        .movie-info .release-date,
+        .movie-info .runtime {
+            font-size: 14px; /* Reduced font size */
+        }
 
-            .movie-info .runtime {
-                padding: 5px 8px;
-                border: 1px solid white;
-                border-radius: 4px;
-                display: inline-block;
-                font-weight: normal; /* Make the text regular */
-                margin-top: 8px;
-            }
+        .movie-info .runtime {
+            padding: 4px 6px; /* Reduced padding */
+            margin-top: 4px; /* Adjusted margin */
+        }
 
-            .movie-info .genre {
-                margin-left: 10px;
-                color: #aaa; /* Slightly dim color for genres */
-                font-size: 15px;
-            }
-
-        .movie-cover-fade {
-            position: absolute;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            width: 40%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-            -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        .movie-info .genre {
+            margin-left: 8px; /* Reduced margin */
+            font-size: 12px; /* Reduced font size */
         }
 
         .movie-actions {
-            margin-top: 10px;
-            font-size: 12px;
+            margin-top: 8px; /* Adjusted margin */
+            font-size: 10px; /* Reduced font size */
         }
 
-            .movie-actions i {
-                margin-right: 15px;
-                cursor: pointer;
-                color: #aaa;
-                font-size: 20px;
-            }
+        .movie-actions i {
+            margin-right: 10px; /* Reduced margin */
+            font-size: 18px; /* Reduced font size */
+        }
+    }
+</style>
 
-                .movie-actions i:hover {
-                    color: white;
-                }
-    </style>
     <!-- Add FontAwesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
