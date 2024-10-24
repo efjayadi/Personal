@@ -32,7 +32,7 @@
     #movies-container {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Center cards for mobile */
+        justify-content: center;
     }
 
     .movie-card {
@@ -42,8 +42,8 @@
         align-items: center;
         border-radius: 6px;
         overflow: hidden;
-        max-width: 1080px; /* Default for larger screens */
-        width: 100%; /* Full width on small screens */
+        max-width: 1080px;
+        width: 100%;
         margin: 14px auto;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         transition: transform 0.3s ease;
@@ -51,67 +51,65 @@
         min-height: 300px;
     }
 
-    .movie-card:hover {
-        transform: scale(1.02);
-    }
+        .movie-card:hover {
+            transform: scale(1.02);
+        }
 
     .movie-poster {
         flex: 0 0 100px;
-        height: 240px;
+        height: 260px;
         object-fit: cover;
         margin-left: 20px;
-        border-radius: 2px;
+        border-radius: 6px;
     }
 
-        @media screen and (max-width: 768px) {
-            .movie-poster {
-                height: 300px; /* Occupies the full viewport height */
-                margin-left: 0; /* Optional: adjust margin for better mobile layout */
-            }
-              .movie-info p {
-                  font-size:10px;
-                  display:none;
-            }
+    @media screen and (max-width: 768px) {
+        .movie-poster {
+            height: 300px;
+            margin-left: 0;
         }
-        .movie-info {
-            padding: 24px;
-            flex-grow: 1;
-            max-width: 50%; /* Description occupies 60% of the width */
-            z-index: 99;
+    }
+
+    .movie-info {
+        padding: 24px;
+        flex-grow: 1;
+        max-width: 50%;
+        z-index: 99;
+    }
+
+        .movie-info h1 {
+            font-size: 32px;
+            margin: 0;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
 
-    .movie-info h1 {
-        font-size: 30px;
-        margin: 0 0 10px;
-        font-weight: bold;
-    }
+        .movie-info p {
+            margin: 5px 0;
+            color: #ccc;
+            font-size: 14px;
+        }
 
-    .movie-info p {
-        margin: 5px 0;
-        color: #ccc;
-        font-size:14px;
-    }
+        .movie-info .release-date,
+        .movie-info .runtime {
+            color: white;
+            font-size: 16px;
+        }
 
-    .movie-info .release-date,
-    .movie-info .runtime {
-        color: white; /* Set to white for better visibility */
-        font-size: 16px;
-    }
+        .movie-info .runtime {
+            padding: 5px 8px;
+            border: 1px solid white;
+            border-radius: 4px;
+            display: inline-block;
+            font-weight: normal;
+            margin-top: 8px;
+        }
 
-    .movie-info .runtime {
-        padding: 5px 8px;
-        border: 1px solid white;
-        border-radius: 4px;
-        display: inline-block;
-        font-weight: normal; /* Make the text regular */
-        margin-top: 8px;
-    }
-
-    .movie-info .genre {
-        margin-left: 10px;
-        color: #aaa; /* Slightly dim color for genres */
-        font-size: 15px;
-    }
+        .movie-info .genre {
+            margin-left: 10px;
+            color: #aaa;
+            font-size: 15px;
+        }
 
     .movie-cover-fade {
         position: absolute;
@@ -122,9 +120,26 @@
         background-size: cover;
         background-repeat: no-repeat;
         mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
     }
 
-  
+    .movie-buttons {
+        margin-top: 15px;
+    }
+
+        .movie-buttons a {
+            background-color: #18d26e;
+            color: #000;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+            .movie-buttons a:hover {
+                background-color: darkgreen;
+            }
 </style>
 
     <!-- Add FontAwesome for icons -->
@@ -180,19 +195,24 @@
         <main class="main">
             <br><br><br>
             <div id="movies-container">
-                <!-- Movie cards will be dynamically added here -->
-            </div>
+    <div id="movie-1" class="movie-card">
+        <!-- Movie details for the first movie will be dynamically added here -->
+    </div>
+    <div id="movie-2" class="movie-card">
+        <!-- Movie details for the second movie will be dynamically added here -->
+    </div>
+    <div id="movie-3" class="movie-card">
+        <!-- Movie details for the third movie will be dynamically added here -->
+    </div>
+</div>
         </main>
         <footer id="footer" class="footer dark-background">
             <div class="container">
                 <h3 class="sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:40px;">.</font></h3>
                 <p>From custom websites to branded content, I provide comprehensive digital solutions tailored to your business needs. With a focus on quality, creativity, and results, I help you enhance your online presence and drive growth. Let’s work together to build something extraordinary and elevate your brand to the next level!</p>
                 <div class="social-links d-flex justify-content-center">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-skype"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href="https://x.com/efjayadi"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://instagram.com/efjayadi"><i class="bi bi-instagram"></i></a>
                 </div>
                 <div class="container">
                     <div class="copyright">
@@ -231,27 +251,41 @@
         <script src="assets/js/main.js"></script>
         <script>
     const apiKey = 'cac04f877c2c8ae78758f05b158d796d';  // Your API key
-    const moviesContainer = document.getElementById('movies-container');
 
-    // List of movie titles you want to display
-                const movieTitles = ['The Imitation Game','Street Cat Named Bob','Flow', 'Civil War', 'Bullet Train', 'Wolfs','Top Gun Maverick','Dont Look Up','green book','the valet','mad max fury road','ford v ferrari','the founder','a man called otto','finch','Soul','the current war'];
+    // List of movie titles you want to display (same order as your movie containers)
+    const movieTitles = ['Wolfs', 'Civil War', 'Flow'];
 
+    // Manually added trailer and download links for each movie
+    const trailerLinks = [
+        'https://www.youtube.com/watch?v=wLJUPjiRbAM&t=2s', // Wolfs
+        'https://www.youtube.com/watch?v=aDyQxtg0V2w', // Civil War
+        'https://www.youtube.com/watch?v=82WW9dVbglI' // Flow trailer
+    ];
+
+    const downloadLinks = [
+        'https://clk.wiki/3Uy5b', // Wolfs
+        'https://clk.wiki/fg8pNb', // Civil War
+        '#' // Flow download
+    ];
+
+    // Array of container IDs where movies will be displayed
+    const movieContainers = ['movie-1', 'movie-2', 'movie-3'];
 
     // Function to fetch and display movies from TMDb API
     function fetchMovies() {
-        movieTitles.forEach(title => {
+        movieTitles.forEach((title, index) => {
             // Fetch specific movie by title from TMDb API
             fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(title)}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.results.length === 0) {
-                        moviesContainer.innerHTML += `<p>No results found for "${title}".</p>`;
+                        document.getElementById(movieContainers[index]).innerHTML = `<p>No results found for "${title}".</p>`;
                         return;
                     }
 
                     const movie = data.results[0]; // Get the first result
 
-                    // Fetch additional movie details to get the runtime
+                    // Fetch additional movie details to get the runtime and other details
                     fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${apiKey}&language=en-US`)
                         .then(response => response.json())
                         .then(movieDetails => {
@@ -267,21 +301,25 @@
                                     const movieGenres = movieDetails.genres.map(genre => genre.name).join(', ');
                                     const runtimeHours = typeof movieDetails.runtime === 'number' ? Math.floor(movieDetails.runtime) : 'N/A';
 
-                                    // Create and display the movie card
+                                    // Populate the movie card inside the specified container
                                     const movieCard = `
-                                        <div class="movie-card">
-                                            <img class="movie-poster" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
-                                            <div class="movie-info">
-                                                <h1>${movie.title}</h1>
-                                                <p class="release-date">Release Date: ${movieDetails.release_date}</p>
-                                                <p class="runtime">${runtimeHours} Minutes</p>
-                                                <span class="genre">${movieGenres}</span>
-                                                <p>${movieDetails.overview}</p>
+                                        <img class="movie-poster" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
+                                        <div class="movie-info">
+                                            <h1>${movie.title}</h1>
+                                            <p class="release-date">Release Date: ${movieDetails.release_date}</p>
+                                            <p class="runtime">${runtimeHours} Minutes</p>
+                                            <span class="genre">${movieGenres}</span>
+                                            <p>${movieDetails.overview}</p>
+                                            <div class="movie-buttons">
+                                                <a href="${trailerLinks[index]}" target="_blank">Watch Trailer</a>
+                                                <a href="${downloadLinks[index]}" target="_blank">Download</a>
                                             </div>
-                                            <div class="movie-cover-fade" style="background-image: url('https://image.tmdb.org/t/p/w780${movie.backdrop_path}');"></div>
                                         </div>
+                                        <div class="movie-cover-fade" style="background-image: url('https://image.tmdb.org/t/p/w780${movie.backdrop_path}');"></div>
                                     `;
-                                    moviesContainer.innerHTML += movieCard;
+
+                                    // Insert the movie card into the appropriate container
+                                    document.getElementById(movieContainers[index]).innerHTML = movieCard;
                                 })
                                 .catch(error => console.error('Error fetching genre data:', error));
                         })
