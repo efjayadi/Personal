@@ -16,7 +16,11 @@
   --heading-font: "Raleway",  sans-serif;
   --nav-font: "Poppins",  sans-serif;
 }
-
+.bi-chess-king::before {
+    content: "\f43f"; /* Unicode for Font Awesome chess king icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #000000; /* Background color for the entire website, including individual sections */
