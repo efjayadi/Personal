@@ -352,6 +352,95 @@ function flashTitle() {
 // Flashing messages
 window.onblur = () => flashTitle();
 </script>
+                <script>
+    const apiKey = 'cac04f877c2c8ae78758f05b158d796d';  // Your API key
+
+    // List of movie titles you want to display (same order as your movie containers)
+    const movieTitles = ['Wolfs', 'Civil War', 'Flow','Bullet Train','Finch','A Man Called Otto'];
+
+    // Manually added trailer and download links for each movie
+    const trailerLinks = [
+        'https://www.youtube.com/watch?v=wLJUPjiRbAM&t=2s', // Wolfs
+        'https://www.youtube.com/watch?v=aDyQxtg0V2w', // Civil War
+        'https://www.youtube.com/watch?v=82WW9dVbglI' // Flow trailer
+        'https://www.youtube.com/watch?v=0IOsk2Vlc4o&pp' // Bullet Train
+        'https://www.youtube.com/watch?v=-0bYWnP3jH4' // finch
+        'https://www.youtube.com/watch?v=eFYUX9l-m5I' // A Man Called Otto
+    ];
+
+    const downloadLinks = [
+        'https://drive.google.com/file/d/1mHVVk1VzNyIFKh_SRZAM6bdfwa5KHz03/view?usp=sharing', // Wolfs
+        'https://drive.google.com/file/d/1LHyxj6ayYSmtkquL14puDVrKea_HPJO4/view?usp=sharing', // Civil War
+        'https://drive.google.com/file/d/1rg1zE-52Ms6a-VTHdBtk37XC8HueNgt6/view?usp=sharing' // Flow download
+        'https://drive.google.com/file/d/14HgGEkf8s219svgihQYSy0uAbOAtRwa1/view?usp=sharing' //bullet train
+        'https://drive.google.com/file/d/16K1msTW72gx-a4KnIlvxw3Jw8cMqob9p/view?usp=sharing' //finch
+        'https://drive.google.com/file/d/1MTnqRvX-euneRArCKEv9kUrL9eVgMbsA/view?usp=sharing' //otto
+    ];
+
+    // Array of container IDs where movies will be displayed
+    const movieContainers = ['movie-1', 'movie-2', 'movie-3'];
+
+    // Function to fetch and display movies from TMDb API
+    function fetchMovies() {
+        movieTitles.forEach((title, index) => {
+            // Fetch specific movie by title from TMDb API
+            fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(title)}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.results.length === 0) {
+                        document.getElementById(movieContainers[index]).innerHTML = `<p>No results found for "${title}".</p>`;
+                        return;
+                    }
+
+                    const movie = data.results[0]; // Get the first result
+
+                    // Fetch additional movie details to get the runtime and other details
+                    fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${apiKey}&language=en-US`)
+                        .then(response => response.json())
+                        .then(movieDetails => {
+                            // Fetch genres from the TMDb API (using genre IDs)
+                            fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`)
+                                .then(response => response.json())
+                                .then(genreData => {
+                                    const genreMap = {};
+                                    genreData.genres.forEach(genre => {
+                                        genreMap[genre.id] = genre.name;
+                                    });
+
+                                    const movieGenres = movieDetails.genres.map(genre => genre.name).join(', ');
+                                    const runtimeHours = typeof movieDetails.runtime === 'number' ? Math.floor(movieDetails.runtime) : 'N/A';
+
+                                    // Populate the movie card inside the specified container
+                                    const movieCard = `
+                                        <img class="movie-poster" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
+                                        <div class="movie-info">
+                                            <h1>${movie.title}</h1>
+                                            <p class="release-date">Release Date: ${movieDetails.release_date}</p>
+                                            <p class="runtime">${runtimeHours} Minutes</p>
+                                            <span class="genre">${movieGenres}</span>
+                                            <p>${movieDetails.overview}</p>
+                                            <div class="movie-buttons">
+                                                <a href="${trailerLinks[index]}" target="_blank">Trailer</a>
+                                                <a href="${downloadLinks[index]}" target="_blank">Download</a>
+                                            </div>
+                                        </div>
+                                        <div class="movie-cover-fade" style="background-image: url('https://image.tmdb.org/t/p/w780${movie.backdrop_path}');"></div>
+                                    `;
+
+                                    // Insert the movie card into the appropriate container
+                                    document.getElementById(movieContainers[index]).innerHTML = movieCard;
+                                })
+                                .catch(error => console.error('Error fetching genre data:', error));
+                        })
+                        .catch(error => console.error('Error fetching movie details:', error));
+                })
+                .catch(error => console.error('Error fetching movie data:', error));
+        });
+    }
+
+    // Fetch movies on page load
+    fetchMovies();
+</script>
 </body>
 
 </html>
