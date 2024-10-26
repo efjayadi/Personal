@@ -219,6 +219,15 @@
     <div id="movie-3" class="movie-card">
         <!-- Movie details for the third movie will be dynamically added here -->
     </div>
+    <div id="movie-4" class="movie-card">
+        <!-- Movie details for the first movie will be dynamically added here -->
+    </div>
+    <div id="movie-5" class="movie-card">
+        <!-- Movie details for the second movie will be dynamically added here -->
+    </div>
+    <div id="movie-6" class="movie-card">
+        <!-- Movie details for the third movie will be dynamically added here -->
+    </div>
 </div>
         </main>
         <footer id="footer" class="footer dark-background">
@@ -326,33 +335,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-<script>
-let originalTitle = document.title;
-let flashing = false;
-let currentMessageIndex = 0; // To keep track of the current message
-const messages = ['🔥 Come Back!', '🔥 Don\'t Forget This!'];
-
-function flashTitle() {
-    if (flashing) return;  // Prevent multiple intervals
-    flashing = true;
-
-    let flashInterval = setInterval(() => {
-        document.title = document.title === messages[currentMessageIndex] ? originalTitle : messages[currentMessageIndex];
-        currentMessageIndex = (currentMessageIndex + 1) % messages.length; // Cycle through messages
-    }, 1000);
-
-    // Stop flashing after 10 seconds (optional)
-    setTimeout(() => {
-        clearInterval(flashInterval);
-        document.title = originalTitle;
-        flashing = false;
-    }, 10000); // 10 seconds duration
-}
-
-// Flashing messages
-window.onblur = () => flashTitle();
-</script>
-                <script>
+  <script>
     const apiKey = 'cac04f877c2c8ae78758f05b158d796d';  // Your API key
 
     // List of movie titles you want to display (same order as your movie containers)
@@ -378,7 +361,7 @@ window.onblur = () => flashTitle();
     ];
 
     // Array of container IDs where movies will be displayed
-    const movieContainers = ['movie-1', 'movie-2', 'movie-3'];
+    const movieContainers = ['movie-1', 'movie-2', 'movie-3', 'movie-4', 'movie-5', 'movie-6'];
 
     // Function to fetch and display movies from TMDb API
     function fetchMovies() {
