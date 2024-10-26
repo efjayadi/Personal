@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -175,7 +176,7 @@
                     <h1 class="sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:40px;">.</font></h1>
                 </a>
 
-                <nav id="navmenu" class="navmenu">
+                 <nav id="navmenu" class="navmenu">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
@@ -183,22 +184,19 @@
                         <li><a href="services.html">Services</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li class="dropdown">
-                            <a href="#" class="active"><span>I'm Interested in</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <a href="#" class="active"><span>My Collection</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                             <ul>
-                                <li><a href="people.html">People</a></li>
+                                <li><a href="people.html">People I Follow</a></li>
                                 <li class="dropdown">
-                                    <a href="#"><span>Games</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                    <a href="#"><span>Games I Enjoy</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                                     <ul>
-                                        <li><a href="switch.html">Nintendo Switch</a></li>
-                                        <li><a href="wii.html">Nintendo Wii</a></li>
-                                        <li><a href="wiiu.html">Nintendo Wii U</a></li>
-                                        <li><a href="pc.html">PC</a></li>
+                                        <li><a href="nintendo.html">Nintendo</a></li>
                                         <li><a href="android.html">Android</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="movies.html">Movies</a></li>
-                                <li><a href="youtube.html">Youtube Channel</a></li>
-                                <li><a href="books.html">Books</a></li>
+                                <li><a href="movies.html">Good Movies</a></li>
+                                <li><a href="youtube.html">Interesting Video</a></li>
+                                <li><a href="books.html">Audiobooks</a></li>
                             </ul>
                         </li>
                         <li><a href="contact.html">Contact</a></li>
@@ -232,28 +230,90 @@
     </div>
 </div>
         </main>
-        <footer id="footer" class="footer dark-background">
-            <div class="container">
-                <h3 class="sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:40px;">.</font></h3>
-                <p>From custom websites to branded content, I provide comprehensive digital solutions tailored to your business needs. With a focus on quality, creativity, and results, I help you enhance your online presence and drive growth. Let’s work together to build something extraordinary and elevate your brand to the next level!</p>
-                <div class="social-links d-flex justify-content-center">
-                    <a href="https://x.com/efjayadi"><i class="bi bi-twitter-x"></i></a>
-                    <a href="https://instagram.com/efjayadi"><i class="bi bi-instagram"></i></a>
-                </div>
-                <div class="container">
-                    <div class="copyright">
-                        <span>Copyright</span> <strong class="px-1 sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:20px;">.</font></strong> <span>All Rights Reserved</span>
-                    </div>
-                    <div class="credits" style="opacity:3%;">
-                        <!-- All the links in the footer should remain intact. -->
-                        <!-- You can delete the links only if you've purchased the pro version. -->
-                        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+         <footer id="footer" class="footer dark-background">
+    <div class="container">
+     <div class="kaki">
+    <div class="wadah">
+        <h3 class="sitename">JeStudios<font style="color: #18d26e; font-family: roboto; font-size: 40px;">.</font></h3>
+        <a href="https://wa.me/6287778371377?text=Hello!%20I%20found%20your%20contact%20on%20your%20website." class="whatsapp-button" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
+            Chat on WhatsApp
+        </a>
+    </div>
+</div>
+
+<style>
+    .kaki {
+        display: flex;
+        justify-content: center; /* Center the content */
+        align-items: center; /* Vertically center */
+        padding: 20px; /* Add some padding */
+    }
+
+    .wadah {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center items inside the container */
+        gap: 10px; /* Space between the site name and button */
+    }
+
+    .whatsapp-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #18d26e;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 25px; /* Fully rounded button */
+        text-decoration: none;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+    }
+
+    .whatsapp-button:hover {
+        background-color: #16b861;
+    }
+
+    .whatsapp-button img {
+        width: 24px; /* Increased icon size */
+        height: 24px; /* Ensures the icon is square */
+        margin-right: 8px;
+        filter: brightness(0) invert(1); /* Makes the icon white */
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .wadah {
+            flex-direction: column; /* Stack on mobile */
+            align-items: center; /* Center align on mobile */
+        }
+    }
+</style>
+        <p>From custom websites to branded content, I provide comprehensive digital solutions tailored to your business needs. With a focus on quality, creativity, and results, I help you enhance your online presence and drive growth. Let’s work together to build something extraordinary and elevate your brand to the next level!</p>
+      <div class="social-links d-flex justify-content-center">
+          <a href="https://x.com/efjayadi"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://instagram.com/efjayadi"><i class="bi bi-instagram"></i></a>
+          <a href="https://youtube.com/@galaxiesdaily"><i class="bi bi-youtube"></i></a>
+          <a href="https://tiktok.com/@mini.ddv"><i class="bi bi-tiktok"></i></a>
+          <a href="https://www.chess.com/member/efjayadi"><i class="fas fa-chess-pawn"></i></a>
+      </div>
+    
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:20px;">.</font></strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits" style="opacity:3%;">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
         <!-- Scroll Top -->
         <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -279,25 +339,25 @@
     const apiKey = 'cac04f877c2c8ae78758f05b158d796d';  // Your API key
 
     // List of movie titles you want to display (same order as your movie containers)
-    const movieTitles = ['Wolfs', 'Civil War', 'Flow','Bullet Train','Finch','A Man Called Otto'];
+    const movieTitles = ['Wolfs', 'Civil War', 'Flow', 'Bullet Train', 'Finch', 'A Man Called Otto'];
 
     // Manually added trailer and download links for each movie
     // Manually added trailer and download links for each movie
     const trailerLinks = [
         'https://www.youtube.com/watch?v=wLJUPjiRbAM&t=2s', // Wolfs
         'https://www.youtube.com/watch?v=aDyQxtg0V2w', // Civil War
-        'https://www.youtube.com/watch?v=82WW9dVbglI' // Flow trailer
-        'https://www.youtube.com/watch?v=0IOsk2Vlc4o&pp' // Bullet Train
-        'https://www.youtube.com/watch?v=-0bYWnP3jH4' // finch
+        'https://www.youtube.com/watch?v=82WW9dVbglI', // Flow trailer
+        'https://www.youtube.com/watch?v=0IOsk2Vlc4o&pp', // Bullet Train
+        'https://www.youtube.com/watch?v=-0bYWnP3jH4', // finch
         'https://www.youtube.com/watch?v=eFYUX9l-m5I' // A Man Called Otto
     ];
 
     const downloadLinks = [
         'https://drive.google.com/file/d/1mHVVk1VzNyIFKh_SRZAM6bdfwa5KHz03/view?usp=sharing', // Wolfs
         'https://drive.google.com/file/d/1LHyxj6ayYSmtkquL14puDVrKea_HPJO4/view?usp=sharing', // Civil War
-        'https://drive.google.com/file/d/1rg1zE-52Ms6a-VTHdBtk37XC8HueNgt6/view?usp=sharing' // Flow download
-        'https://drive.google.com/file/d/14HgGEkf8s219svgihQYSy0uAbOAtRwa1/view?usp=sharing' //bullet train
-        'https://drive.google.com/file/d/16K1msTW72gx-a4KnIlvxw3Jw8cMqob9p/view?usp=sharing' //finch
+        'https://drive.google.com/file/d/1rg1zE-52Ms6a-VTHdBtk37XC8HueNgt6/view?usp=sharing', // Flow download
+        'https://drive.google.com/file/d/14HgGEkf8s219svgihQYSy0uAbOAtRwa1/view?usp=sharing', //bullet train
+        'https://drive.google.com/file/d/16K1msTW72gx-a4KnIlvxw3Jw8cMqob9p/view?usp=sharing', //finch
         'https://drive.google.com/file/d/1MTnqRvX-euneRArCKEv9kUrL9eVgMbsA/view?usp=sharing' //otto
     ];
 
@@ -365,6 +425,31 @@
     // Fetch movies on page load
     fetchMovies();
 </script>
+<script>
+let originalTitle = document.title;
+let flashing = false;
+let currentMessageIndex = 0; // To keep track of the current message
+const messages = ['🔥 Come Back!', '🔥 Don\'t Forget This!'];
 
+function flashTitle() {
+    if (flashing) return;  // Prevent multiple intervals
+    flashing = true;
+
+    let flashInterval = setInterval(() => {
+        document.title = document.title === messages[currentMessageIndex] ? originalTitle : messages[currentMessageIndex];
+        currentMessageIndex = (currentMessageIndex + 1) % messages.length; // Cycle through messages
+    }, 1000);
+
+    // Stop flashing after 10 seconds (optional)
+    setTimeout(() => {
+        clearInterval(flashInterval);
+        document.title = originalTitle;
+        flashing = false;
+    }, 10000); // 10 seconds duration
+}
+
+// Flashing messages
+window.onblur = () => flashTitle();
+</script>
     </body>
 </html>
