@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -224,131 +225,136 @@
 </div>
         </main>
         <footer id="footer" class="footer dark-background">
-            <div class="container">
-                <h3 class="sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:40px;">.</font></h3>
-                <p>From custom websites to branded content, I provide comprehensive digital solutions tailored to your business needs. With a focus on quality, creativity, and results, I help you enhance your online presence and drive growth. Let’s work together to build something extraordinary and elevate your brand to the next level!</p>
-                <div class="social-links d-flex justify-content-center">
-                    <a href="https://x.com/efjayadi"><i class="bi bi-twitter-x"></i></a>
-                    <a href="https://instagram.com/efjayadi"><i class="bi bi-instagram"></i></a>
-                </div>
-                <div class="container">
-                    <div class="copyright">
-                        <span>Copyright</span> <strong class="px-1 sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:20px;">.</font></strong> <span>All Rights Reserved</span>
-                    </div>
-                    <div class="credits" style="opacity:3%;">
-                        <!-- All the links in the footer should remain intact. -->
-                        <!-- You can delete the links only if you've purchased the pro version. -->
-                        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+    <div class="container">
+     <div class="kaki">
+    <div class="wadah">
+        <h3 class="sitename">JeStudios<font style="color: #18d26e; font-family: roboto; font-size: 40px;">.</font></h3>
+        <a href="https://wa.me/6287778371377?text=Hello!%20I%20found%20your%20contact%20on%20your%20website." class="whatsapp-button" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
+            Chat on WhatsApp
+        </a>
+    </div>
+</div>
 
-        <!-- Scroll Top -->
-        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-        <!-- Preloader -->
-        <div id="preloader"></div>
-
-        <!-- Vendor JS Files -->
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/vendor/php-email-form/validate.js"></script>
-        <script src="assets/vendor/aos/aos.js"></script>
-        <script src="assets/vendor/typed.js/typed.umd.js"></script>
-        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-        <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-        <!-- Main JS File -->
-        <script src="assets/js/main.js"></script>
-        <script>
-    const apiKey = 'cac04f877c2c8ae78758f05b158d796d';  // Your API key
-
-    // List of movie titles you want to display (same order as your movie containers)
-    const movieTitles = ['Wolfs', 'Civil War', 'Flow'];
-
-    // Manually added trailer and download links for each movie
-    const trailerLinks = [
-        'https://www.youtube.com/watch?v=wLJUPjiRbAM&t=2s', // Wolfs
-        'https://www.youtube.com/watch?v=aDyQxtg0V2w', // Civil War
-        'https://www.youtube.com/watch?v=82WW9dVbglI' // Flow trailer
-    ];
-
-    const downloadLinks = [
-        'https://drive.google.com/file/d/1mHVVk1VzNyIFKh_SRZAM6bdfwa5KHz03/view?usp=drive_link', // Wolfs
-        'https://drive.google.com/file/d/1LHyxj6ayYSmtkquL14puDVrKea_HPJO4/view?usp=drive_link', // Civil War
-        '#' // Flow download
-    ];
-
-    // Array of container IDs where movies will be displayed
-    const movieContainers = ['movie-1', 'movie-2', 'movie-3'];
-
-    // Function to fetch and display movies from TMDb API
-    function fetchMovies() {
-        movieTitles.forEach((title, index) => {
-            // Fetch specific movie by title from TMDb API
-            fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(title)}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.results.length === 0) {
-                        document.getElementById(movieContainers[index]).innerHTML = `<p>No results found for "${title}".</p>`;
-                        return;
-                    }
-
-                    const movie = data.results[0]; // Get the first result
-
-                    // Fetch additional movie details to get the runtime and other details
-                    fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${apiKey}&language=en-US`)
-                        .then(response => response.json())
-                        .then(movieDetails => {
-                            // Fetch genres from the TMDb API (using genre IDs)
-                            fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`)
-                                .then(response => response.json())
-                                .then(genreData => {
-                                    const genreMap = {};
-                                    genreData.genres.forEach(genre => {
-                                        genreMap[genre.id] = genre.name;
-                                    });
-
-                                    const movieGenres = movieDetails.genres.map(genre => genre.name).join(', ');
-                                    const runtimeHours = typeof movieDetails.runtime === 'number' ? Math.floor(movieDetails.runtime) : 'N/A';
-
-                                    // Populate the movie card inside the specified container
-                                    const movieCard = `
-                                        <img class="movie-poster" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
-                                        <div class="movie-info">
-                                            <h1>${movie.title}</h1>
-                                            <p class="release-date">Release Date: ${movieDetails.release_date}</p>
-                                            <p class="runtime">${runtimeHours} Minutes</p>
-                                            <span class="genre">${movieGenres}</span>
-                                            <p>${movieDetails.overview}</p>
-                                            <div class="movie-buttons">
-                                                <a href="${trailerLinks[index]}" target="_blank">Trailer</a>
-                                                <a href="${downloadLinks[index]}" target="_blank">Download</a>
-                                            </div>
-                                        </div>
-                                        <div class="movie-cover-fade" style="background-image: url('https://image.tmdb.org/t/p/w780${movie.backdrop_path}');"></div>
-                                    `;
-
-                                    // Insert the movie card into the appropriate container
-                                    document.getElementById(movieContainers[index]).innerHTML = movieCard;
-                                })
-                                .catch(error => console.error('Error fetching genre data:', error));
-                        })
-                        .catch(error => console.error('Error fetching movie details:', error));
-                })
-                .catch(error => console.error('Error fetching movie data:', error));
-        });
+<style>
+    .kaki {
+        display: flex;
+        justify-content: center; /* Center the content */
+        align-items: center; /* Vertically center */
+        padding: 20px; /* Add some padding */
     }
 
-    // Fetch movies on page load
-    fetchMovies();
-</script>
+    .wadah {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center items inside the container */
+        gap: 10px; /* Space between the site name and button */
+    }
 
-    </body>
+    .whatsapp-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #18d26e;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 25px; /* Fully rounded button */
+        text-decoration: none;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+    }
+
+    .whatsapp-button:hover {
+        background-color: #16b861;
+    }
+
+    .whatsapp-button img {
+        width: 24px; /* Increased icon size */
+        height: 24px; /* Ensures the icon is square */
+        margin-right: 8px;
+        filter: brightness(0) invert(1); /* Makes the icon white */
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .wadah {
+            flex-direction: column; /* Stack on mobile */
+            align-items: center; /* Center align on mobile */
+        }
+    }
+</style>
+        <p>From custom websites to branded content, I provide comprehensive digital solutions tailored to your business needs. With a focus on quality, creativity, and results, I help you enhance your online presence and drive growth. Let’s work together to build something extraordinary and elevate your brand to the next level!</p>
+      <div class="social-links d-flex justify-content-center">
+          <a href="https://x.com/efjayadi"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://instagram.com/efjayadi"><i class="bi bi-instagram"></i></a>
+          <a href="https://youtube.com/@galaxiesdaily"><i class="bi bi-youtube"></i></a>
+          <a href="https://tiktok.com/@mini.ddv"><i class="bi bi-tiktok"></i></a>
+          <a href="https://www.chess.com/member/efjayadi"><i class="fas fa-chess-pawn"></i></a>
+      </div>
+    
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:20px;">.</font></strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits" style="opacity:3%;">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+<script>
+let originalTitle = document.title;
+let flashing = false;
+let currentMessageIndex = 0; // To keep track of the current message
+const messages = ['🔥 Come Back!', '🔥 Don\'t Forget This!'];
+
+function flashTitle() {
+    if (flashing) return;  // Prevent multiple intervals
+    flashing = true;
+
+    let flashInterval = setInterval(() => {
+        document.title = document.title === messages[currentMessageIndex] ? originalTitle : messages[currentMessageIndex];
+        currentMessageIndex = (currentMessageIndex + 1) % messages.length; // Cycle through messages
+    }, 1000);
+
+    // Stop flashing after 10 seconds (optional)
+    setTimeout(() => {
+        clearInterval(flashInterval);
+        document.title = originalTitle;
+        flashing = false;
+    }, 10000); // 10 seconds duration
+}
+
+// Flashing messages
+window.onblur = () => flashTitle();
+</script>
+</body>
+
 </html>
