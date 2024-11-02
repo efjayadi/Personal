@@ -23,15 +23,39 @@
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    color: white;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000; /* Make sure it’s on top */
+    backdrop-filter: blur(5px); /* Blur the background */
+}
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
 
-
+    <script>
+        // Show the modal on page load
+        window.onload = function() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+    </script>
 </head>
 
 <body class="portfolio-page">
-
+    <div class="modal" id="modal">
+        <a href="index.html">
+            <h1 class="sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:40px;">.</font></h1>
+        </a>
+        <p>This page is still under construction / I'm still working on it.</p>
+    </div>
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
