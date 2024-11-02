@@ -298,20 +298,79 @@
 
   <footer id="footer" class="footer dark-background">
     <div class="container">
-      <h3 class="sitename">Personal</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+     <div class="kaki">
+    <div class="wadah">
+        <h3 class="sitename">JeStudios<font style="color: #18d26e; font-family: roboto; font-size: 40px;">.</font></h3>
+        <a href="https://wa.me/6287778371377?text=Hello!%20I%20found%20your%20contact%20on%20your%20website." class="whatsapp-button" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
+            Chat on WhatsApp
+        </a>
+    </div>
+</div>
+
+<style>
+    .kaki {
+        display: flex;
+        justify-content: center; /* Center the content */
+        align-items: center; /* Vertically center */
+        padding: 20px; /* Add some padding */
+    }
+
+    .wadah {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center items inside the container */
+        gap: 10px; /* Space between the site name and button */
+    }
+
+    .whatsapp-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #18d26e;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 25px; /* Fully rounded button */
+        text-decoration: none;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+    }
+
+    .whatsapp-button:hover {
+        background-color: #16b861;
+    }
+
+    .whatsapp-button img {
+        width: 24px; /* Increased icon size */
+        height: 24px; /* Ensures the icon is square */
+        margin-right: 8px;
+        filter: brightness(0) invert(1); /* Makes the icon white */
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .wadah {
+            flex-direction: column; /* Stack on mobile */
+            align-items: center; /* Center align on mobile */
+        }
+    }
+</style>
+        <p>From custom websites to branded content, I provide comprehensive digital solutions tailored to your business needs. With a focus on quality, creativity, and results, I help you enhance your online presence and drive growth. Let’s work together to build something extraordinary and elevate your brand to the next level!</p>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+          <a href="https://x.com/efjayadi"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://instagram.com/efjayadi"><i class="bi bi-instagram"></i></a>
+          <a href="https://youtube.com/@galaxiesdaily"><i class="bi bi-youtube"></i></a>
+          <a href="https://tiktok.com/@mini.dv"><i class="bi bi-tiktok"></i></a>
+          <a href="https://www.chess.com/member/efjayadi"><i class="fas fa-chess-pawn"></i></a>
       </div>
+    
       <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Personal</strong> <span>All Rights Reserved</span>
+          <span>Copyright</span> <strong class="px-1 sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:20px;">.</font></strong> <span>All Rights Reserved</span>
         </div>
-        <div class="credits">
+        <div class="credits" style="opacity:3%;">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you've purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
@@ -342,7 +401,32 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+<script>
+let originalTitle = document.title;
+let flashing = false;
+let currentMessageIndex = 0; // To keep track of the current message
+const messages = ['🔥 Come Back!', '🔥 Don\'t Forget This!'];
 
+function flashTitle() {
+    if (flashing) return;  // Prevent multiple intervals
+    flashing = true;
+
+    let flashInterval = setInterval(() => {
+        document.title = document.title === messages[currentMessageIndex] ? originalTitle : messages[currentMessageIndex];
+        currentMessageIndex = (currentMessageIndex + 1) % messages.length; // Cycle through messages
+    }, 1000);
+
+    // Stop flashing after 10 seconds (optional)
+    setTimeout(() => {
+        clearInterval(flashInterval);
+        document.title = originalTitle;
+        flashing = false;
+    }, 10000); // 10 seconds duration
+}
+
+// Flashing messages
+window.onblur = () => flashTitle();
+</script>
 </body>
 
 </html>
