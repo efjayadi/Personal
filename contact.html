@@ -27,7 +27,30 @@
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
 
+    <style>
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    color: white;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000; /* Make sure it’s on top */
+    backdrop-filter: blur(5px); /* Blur the background */
+}
+        </style>
 
+    <script>
+        // Show the modal on page load
+        window.onload = function() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+    </script>
 </head>
 
 <body class="contact-page">
