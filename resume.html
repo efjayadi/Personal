@@ -47,6 +47,24 @@
         background-color: #16b861;
         color:black;
     }
+      .wave {
+    display: inline-block;
+    font-size: 50px;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .wave:hover {
+    animation: waveAnimation 0.6s infinite;
+  }
+
+  @keyframes waveAnimation {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(-20deg); }
+    40% { transform: rotate(10deg); }
+    60% { transform: rotate(-10deg); }
+    80% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+  }
 </style>
 </head>
 
@@ -100,7 +118,7 @@
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
               <h1>Resume</h1>
-              <p class="mb-0">Welcome! 👋 Here, you'll get a glimpse into my journey as a one-person brand specializing in graphic design, website design, and 3D modeling. Let’s dive in, and you’ll see how I bring ideas to life, helping you achieve your vision with creativity and precision.</p>
+              <p class="mb-0">Welcome! <span class="wave">👋</span> Here, you'll get a glimpse into my journey as a one-person brand specializing in graphic design, website design, and 3D modeling. Let’s dive in, and you’ll see how I bring ideas to life, helping you achieve your vision with creativity and precision.</p>
             </div>
           </div>
         </div>
