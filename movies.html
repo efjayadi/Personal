@@ -225,6 +225,9 @@
     <div id="movie-5" class="movie-card">
         <!-- Movie details for the second movie will be dynamically added here -->
     </div>
+    <div id="movie-6" class="movie-card">
+        <!-- Movie details for the second movie will be dynamically added here -->
+    </div>
 </div>
         </main>
          <footer id="footer" class="footer dark-background">
@@ -336,7 +339,7 @@
     const apiKey = 'cac04f877c2c8ae78758f05b158d796d';  // Your API key
 
     // List of movie titles you want to display (same order as your movie containers)
-    const movieTitles = ['Wolfs', 'Civil War', 'Flow', 'Bullet Train', 'A Man Called Otto'];
+    const movieTitles = ['Wolfs', 'Civil War', 'Flow', 'Bullet Train', 'A Man Called Otto', 'Old Dads'];
 
     // Manually added trailer and download links for each movie
     // Manually added trailer and download links for each movie
@@ -345,7 +348,8 @@
         'https://www.youtube.com/watch?v=aDyQxtg0V2w', // Civil War
         'https://www.youtube.com/watch?v=82WW9dVbglI', // Flow trailer
         'https://www.youtube.com/watch?v=0IOsk2Vlc4o&pp', // Bullet Train
-        'https://www.youtube.com/watch?v=eFYUX9l-m5I' // A Man Called Otto
+        'https://www.youtube.com/watch?v=eFYUX9l-m5I', // A Man Called Otto
+        'https://www.youtube.com/watch?v=mU01e6KjM2s' //old dads
     ];
 
     const downloadLinks = [
@@ -353,11 +357,12 @@
         'https://drive.google.com/file/d/1LHyxj6ayYSmtkquL14puDVrKea_HPJO4/view?usp=sharing', // Civil War
         'https://drive.google.com/file/d/1rg1zE-52Ms6a-VTHdBtk37XC8HueNgt6/view?usp=sharing', // Flow download
         'https://drive.google.com/file/d/14HgGEkf8s219svgihQYSy0uAbOAtRwa1/view?usp=sharing', //bullet train
-        'https://drive.google.com/file/d/1MTnqRvX-euneRArCKEv9kUrL9eVgMbsA/view?usp=sharing' //otto
+        'https://drive.google.com/file/d/1MTnqRvX-euneRArCKEv9kUrL9eVgMbsA/view?usp=sharing', //otto
+        'https://drive.google.com/file/d/1OiM3KUjfRhVKHmXAac78jbyCQ8eaHvGd/view?usp=sharing' //old dads
     ];
 
     // Array of container IDs where movies will be displayed
-        const movieContainers = ['movie-1', 'movie-2', 'movie-3', 'movie-4', 'movie-5'];
+        const movieContainers = ['movie-1', 'movie-2', 'movie-3', 'movie-4', 'movie-5', 'movie-6'];
 
     // Function to fetch and display movies from TMDb API
     function fetchMovies() {
