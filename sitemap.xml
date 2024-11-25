@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://fajarjayadi.shop/</loc>
+    <lastmod>2024-11-25</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- Who I Am Page -->
+  <url>
+    <loc>https://fajarjayadi.shop/about</loc>
+    <lastmod>2024-11-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://fajarjayadi.shop/services</loc>
+    <lastmod>2024-11-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Resume Page -->
+  <url>
+    <loc>https://fajarjayadi.shop/resume</loc>
+    <lastmod>2024-11-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Portfolio Page -->
+  <url>
+    <loc>https://fajarjayadi.shop/portfolio</loc>
+    <lastmod>2024-11-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Additional pages, like blog or contact -->
+  <!-- Example -->
+  <url>
+    <loc>https://fajarjayadi.shop/contact</loc>
+    <lastmod>2024-11-25</lastmod>
+    <priority>0.50</priority>
+  </url>
+</urlset>
