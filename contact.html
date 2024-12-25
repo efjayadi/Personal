@@ -134,7 +134,7 @@
               <i class="icon bi bi-geo-alt flex-shrink-0"></i>
               <div>
                 <h3>Address</h3>
-                <p>Ruko CBD A16, Pasirsari, South Cikarang, Bekasi Regency, West Java 17530</p>
+                <a href="https://maps.app.goo.gl/5szTJEBCrfozG223A">Ruko CBD A16, Pasirsari, South Cikarang, Bekasi Regency, West Java 17530</a>
               </div>
             </div>
           </div><!-- End Info Item -->
@@ -144,7 +144,7 @@
               <i class="icon bi bi-telephone flex-shrink-0"></i>
               <div>
                 <h3>Call Me</h3>
-                <p>+62 8319 2054 797</p>
+                <p>+62 8777 837 1377</p>
               </div>
             </div>
           </div><!-- End Info Item -->
@@ -177,7 +177,7 @@
 
         </div>
 
-       <form class="php-email-form" data-aos="fade-up" data-aos-delay="600" onsubmit="sendMessageToWhatsApp(event)">
+      <form class="php-email-form" method="post" action="#" data-aos="fade-up" data-aos-delay="600" onsubmit="sendMessageToWhatsApp(event)">
   <div class="row gy-4">
 
     <div class="col-md-6">
@@ -201,7 +201,7 @@
       <div class="error-message"></div>
       <div class="sent-message">Your message has been sent. Thank you!</div>
 
-      <button type="submit">Chat on WhatsApp</button>
+      <button type="submit">Send</button>
     </div>
 
   </div>
@@ -209,19 +209,21 @@
 
 <script>
   function sendMessageToWhatsApp(event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent the form from submitting to the server
 
+    // Get form data
     var name = document.getElementById('name').value;
     var phone = document.getElementById('phone').value;
     var subject = document.getElementById('subject').value;
     var message = document.getElementById('message').value;
 
+    // Construct WhatsApp message
     var whatsappMessage = `Hello, I’m ${name}. Subject: ${subject}. Message: ${message} (Phone: ${phone})`;
 
-    // Construct WhatsApp link
+    // Create WhatsApp link
     var whatsappLink = `https://wa.me/6287778371377?text=${encodeURIComponent(whatsappMessage)}`;
 
-    // Redirect to WhatsApp
+    // Open the WhatsApp link
     window.open(whatsappLink, '_blank');
   }
 </script>
