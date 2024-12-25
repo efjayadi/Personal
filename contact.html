@@ -106,8 +106,8 @@
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
-              <h1>Contact</h1>
-              <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              <h1>Let's Connect!</h1>
+              <p class="mb-0">Have a question, idea, or just want to chat? I’d love to hear from you! Feel free to reach out using the form below or through your preferred method. Let’s start the conversation!</p>
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@
               <i class="icon bi bi-geo-alt flex-shrink-0"></i>
               <div>
                 <h3>Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p>Ruko CBD A16, Pasirsari, South Cikarang, Bekasi Regency, West Java 17530</p>
               </div>
             </div>
           </div><!-- End Info Item -->
@@ -144,7 +144,7 @@
               <i class="icon bi bi-telephone flex-shrink-0"></i>
               <div>
                 <h3>Call Me</h3>
-                <p>+1 5589 55488 55</p>
+                <p>+62 8319 2054 797</p>
               </div>
             </div>
           </div><!-- End Info Item -->
@@ -154,7 +154,7 @@
               <i class="icon bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Email Us</h3>
-                <p>info@example.com</p>
+                <p>efjayadi@gmail.com</p>
               </div>
             </div>
           </div><!-- End Info Item -->
@@ -165,11 +165,11 @@
               <div>
                 <h3>Social Profiles</h3>
                 <div class="social-links">
-                  <a href="#"><i class="bi bi-twitter-x"></i></a>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                  <a href="#"><i class="bi bi-instagram"></i></a>
-                  <a href="#"><i class="bi bi-skype"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="https://x.com/efjayadi"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://instagram.com/efjayadi"><i class="bi bi-instagram"></i></a>
+          <a href="https://youtube.com/@galaxiesdaily"><i class="bi bi-youtube"></i></a>
+          <a href="https://tiktok.com/@mini.dv"><i class="bi bi-tiktok"></i></a>
+          <a href="https://www.chess.com/member/efjayadi"><i class="fas fa-chess-pawn"></i></a>
                 </div>
               </div>
             </div>
@@ -177,35 +177,55 @@
 
         </div>
 
-        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
-          <div class="row gy-4">
+       <form class="php-email-form" data-aos="fade-up" data-aos-delay="600" onsubmit="sendMessageToWhatsApp(event)">
+  <div class="row gy-4">
 
-            <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-            </div>
+    <div class="col-md-6">
+      <input type="text" id="name" class="form-control" placeholder="Your Name" required="">
+    </div>
 
-            <div class="col-md-6 ">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-            </div>
+    <div class="col-md-6">
+      <input type="text" id="phone" class="form-control" placeholder="Your Phone Number" required="">
+    </div>
 
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-            </div>
+    <div class="col-md-12">
+      <input type="text" id="subject" class="form-control" placeholder="Subject" required="">
+    </div>
 
-            <div class="col-md-12">
-              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-            </div>
+    <div class="col-md-12">
+      <textarea class="form-control" id="message" rows="6" placeholder="Message" required=""></textarea>
+    </div>
 
-            <div class="col-md-12 text-center">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
+    <div class="col-md-12 text-center">
+      <div class="loading">Loading</div>
+      <div class="error-message"></div>
+      <div class="sent-message">Your message has been sent. Thank you!</div>
 
-              <button type="submit">Send Message</button>
-            </div>
+      <button type="submit">Chat on WhatsApp</button>
+    </div>
 
-          </div>
-        </form><!-- End Contact Form -->
+  </div>
+</form>
+
+<script>
+  function sendMessageToWhatsApp(event) {
+    event.preventDefault();
+
+    var name = document.getElementById('name').value;
+    var phone = document.getElementById('phone').value;
+    var subject = document.getElementById('subject').value;
+    var message = document.getElementById('message').value;
+
+    var whatsappMessage = `Hello, I’m ${name}. Subject: ${subject}. Message: ${message} (Phone: ${phone})`;
+
+    // Construct WhatsApp link
+    var whatsappLink = `https://wa.me/6287778371377?text=${encodeURIComponent(whatsappMessage)}`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappLink, '_blank');
+  }
+</script>
+
 
       </div>
 
