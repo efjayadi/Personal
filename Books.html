@@ -1,0 +1,460 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Good Books - Fajar Jayadi</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+      <style>
+        #movies-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .movie-card {
+            background-color: #1f1f1f;
+            color: white;
+            display: flex;
+            align-items: center;
+            border-radius: 6px;
+            overflow: hidden;
+            max-width: 1080px;
+            width: 100%;
+            margin: 14px auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            position: relative;
+            min-height: 300px;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.02);
+        }
+
+        .movie-poster {
+            flex: 0 0 100px;
+            height: 260px;
+            object-fit: cover;
+            margin-left: 20px;
+            border-radius: 6px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .movie-poster {
+                height: 300px;
+                margin-left: 0;
+            }
+        }
+
+        .movie-info {
+            padding: 24px;
+            flex-grow: 1;
+            max-width: 50%;
+            z-index: 99;
+        }
+
+        .movie-info h1 {
+            font-size: 32px;
+            margin: 0;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .movie-info p {
+            margin: 5px 0;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .movie-info .release-date,
+        .movie-info .runtime {
+            color: white;
+            font-size: 16px;
+        }
+
+        .movie-info .runtime {
+            padding: 5px 8px;
+            border: 1px solid white;
+            border-radius: 4px;
+            display: inline-block;
+            font-weight: normal;
+            margin-top: 8px;
+        }
+
+        .movie-info .genre {
+            margin-left: 10px;
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        .movie-cover-fade {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 40%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+            -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        }
+
+        .movie-buttons {
+            margin-top: 15px;
+        }
+
+        .movie-buttons a {
+            background-color: #18d26e;
+            color: #000;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .movie-buttons a:hover {
+            background-color: darkgreen;
+        }
+
+        @media screen and (max-width: 768px) {
+            .movie-info p {
+                display: none;
+            }
+
+            .movie-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .movie-buttons a {
+                width: 80%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+
+    <!-- Add FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <body class="index-page">
+
+        <header id="header" class="header d-flex align-items-center fixed-top">
+            <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- <img src="assets/img/logo.png" alt=""> -->
+                    <h1 class="sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:40px;">.</font></h1>
+                </a>
+
+                 <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="active"><span>My Collection</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="people.html">People I Follow</a></li>
+                                <li class="dropdown">
+                                    <a href="#"><span>Games I Enjoy</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                    <ul>
+                                        <li><a href="nintendo.html">Nintendo</a></li>
+                                        <li><a href="android.html">Android</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="movies.html">Good Movies</a></li>
+                                <li><a href="youtube.html">Interesting Video</a></li>
+                                <li><a href="books.html">Audiobooks</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+
+            </div>
+        </header>
+
+        <main class="main">
+            <br><br><br>
+        <div class="container">
+  <!-- Think and Grow Rich -->
+  <div class="book">
+    <div class="front">
+      <img src="https://strategimanajemen.net/wp-content/uploads/2021/08/71UypkUjStL.jpg" alt="Think and Grow Rich">
+    </div>
+    <div class="left-side"  style="background:#9c9f87;color:white;">
+      <h2><span>Napoleon Hill</span><span>Think &amp; Grow Rich</span></h2>
+    </div>
+  </div>
+
+  <!-- The Millionaire Fastlane -->
+  <div class="book">
+    <div class="front">
+      <img src="https://id-live-01.slatic.net/p/9486f63a872ad4c8de60b79506878b92.jpg" alt="The Millionaire Fastlane">
+    </div>
+    <div class="left-side"  style="background:#161733;color:white;">
+      <h2><span>MJ DeMarco</span><span>Millionaire Fastlane</span></h2>
+    </div>
+  </div>
+
+  <!-- Atomic Habits -->
+  <div class="book">
+    <div class="front">
+      <img src="https://m.media-amazon.com/images/I/51-nXsSRfZL.jpg" alt="Atomic Habits">
+    </div>
+    <div class="left-side" style="background:#FFFEe4;">
+      <h2><span>James Clear</span><span>Atomic Habits</span></h2>
+    </div>
+  </div>
+
+<!-- The Psychology Of Money-->
+  <div class="book">
+    <div class="front">
+      <img src="https://cdn.gramedia.com/uploads/items/psychology_of_money.jpg" alt="Atomic Habits">
+    </div>
+    <div class="left-side" style="background:#eeeeee;">
+      <h2><span>Morgan Housel</span><span>The Psychology Of Money</span></h2>
+    </div>
+  </div>
+
+<!-- Art Of Deal -->
+  <div class="book">
+    <div class="front">
+      <img src="https://m.media-amazon.com/images/I/61tmNfB-wBL.jpg" alt="Art Of Deal">
+    </div>
+    <div class="left-side" style="background:#111111;color:#7D6548;">
+      <h2><span>Donald Trump</span><span>The Art Of The Deal</span></h2>
+    </div>
+  </div>
+
+<!-- Subtle Art Of Not Giving A F*ck -->
+  <div class="book">
+    <div class="front">
+      <img src="https://ebooks.gramedia.com/ebook-covers/34319/image_highres/ID_HCO2016MTH09TSAONGAF.jpeg" alt="Subtle Art">
+    </div>
+    <div class="left-side" style="background:#FC4F00;">
+      <h2><span>Mark Manson</span><span>Subtle Art Of Not Giving A F*ck</span></h2>
+    </div>
+  </div>
+
+<!-- Rich Dad Poor Dad -->
+  <div class="book">
+    <div class="front">
+      <img src="https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/9786020333175_rich-dad-poor-dad-_edisi-revisi_.jpg" alt="Art Of Deal">
+    </div>
+    <div class="left-side" style="background:#64306E;color:white">
+      <h2><span>Robert Kiyosaki</span><span>Rich Dad Poor Dad</span></h2>
+    </div>
+  </div>
+
+<!-- 80/20 Principle -->
+  <div class="book">
+    <div class="front">
+      <img src="https://cdn.gramedia.com/uploads/products/e97e7v79xi.jpg" alt="80/20 Principle">
+    </div>
+    <div class="left-side" style="background:#02a9bc;color:white">
+      <h2><span>Richard Koch</span><span>80/20 Principle</span></h2>
+    </div>
+  </div>
+
+
+<!-- Art Of War -->
+  <div class="book">
+    <div class="front">
+      <img src="https://cdn.kobo.com/book-images/fabf787b-ac84-48ef-bfaa-7a33f6b71656/353/569/90/False/the-art-of-war-186.jpg" alt="Art Of War">
+    </div>
+    <div class="left-side" style="background:#111111;color:white">
+      <h2><span>Sun Tzu</span><span>The Art Of War</span></h2>
+    </div>
+  </div>
+
+<!-- The 48 Laws of Power -->
+  <div class="book">
+    <div class="front">
+      <img src="https://m.media-amazon.com/images/I/611X8GI7hpL.jpg" alt="The 48 Laws of Power">
+    </div>
+    <div class="left-side" style="background:#D03511;color:#C0A04D">
+      <h2><span>Robert Greene</span><span>The 48 Laws of Power</span></h2>
+    </div>
+  </div>
+
+<!-- The Richest Man in Babylon  -->
+  <div class="book">
+    <div class="front">
+      <img src="https://cdn.rri.co.id/berita/Tarakan/o/1723778514401-the_richest_man_in_babylon/tqrwe6a28b37scm.jpeg" alt="The Richest Man in Babylon ">
+    </div>
+    <div class="left-side" style="background:#4F0D0A;color:#eeeeee">
+      <h2><span>George Samuel Clason</span><span>The Richest Man in Babylon </span></h2>
+    </div>
+  </div>
+
+
+</div>
+        </main>
+         <footer id="footer" class="footer dark-background">
+    <div class="container">
+     <div class="kaki">
+    <div class="wadah">
+        <h3 class="sitename">JeStudios<font style="color: #18d26e; font-family: roboto; font-size: 40px;">.</font></h3>
+        <a href="https://wa.me/6287778371377?text=Hello!%20I%20found%20your%20contact%20on%20your%20website." class="whatsapp-button" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
+            Chat on WhatsApp
+        </a>
+    </div>
+</div>
+
+<style>
+    .kaki {
+        display: flex;
+        justify-content: center; /* Center the content */
+        align-items: center; /* Vertically center */
+        padding: 20px; /* Add some padding */
+    }
+
+    .wadah {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center items inside the container */
+        gap: 10px; /* Space between the site name and button */
+    }
+
+    .whatsapp-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #18d26e;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 25px; /* Fully rounded button */
+        text-decoration: none;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+    }
+
+    .whatsapp-button:hover {
+        background-color: #16b861;
+    }
+
+    .whatsapp-button img {
+        width: 24px; /* Increased icon size */
+        height: 24px; /* Ensures the icon is square */
+        margin-right: 8px;
+        filter: brightness(0) invert(1); /* Makes the icon white */
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .wadah {
+            flex-direction: column; /* Stack on mobile */
+            align-items: center; /* Center align on mobile */
+        }
+    }
+</style>
+        <p>From custom websites to branded content, I provide comprehensive digital solutions tailored to your business needs. With a focus on quality, creativity, and results, I help you enhance your online presence and drive growth. Let’s work together to build something extraordinary and elevate your brand to the next level!</p>
+      <div class="social-links d-flex justify-content-center">
+          <a href="https://x.com/efjayadi"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://instagram.com/efjayadi"><i class="bi bi-instagram"></i></a>
+          <a href="https://youtube.com/@galaxiesdaily"><i class="bi bi-youtube"></i></a>
+          <a href="https://tiktok.com/@mini.dv"><i class="bi bi-tiktok"></i></a>
+          <a href="https://www.chess.com/member/efjayadi"><i class="fas fa-chess-pawn"></i></a>
+      </div>
+    
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">JeStudios<font style="color: #18d26e;font-family:roboto;font-size:20px;">.</font></strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits" style="opacity:3%;">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+        <!-- Scroll Top -->
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Preloader -->
+        <div id="preloader"></div>
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/typed.js/typed.umd.js"></script>
+        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+        <!-- Main JS File -->
+        <script src="assets/js/main.js"></script>
+      
+<script>
+let originalTitle = document.title;
+let flashing = false;
+let currentMessageIndex = 0; // To keep track of the current message
+const messages = ['🔥 Come Back!', '🔥 Don\'t Forget This!'];
+
+function flashTitle() {
+    if (flashing) return;  // Prevent multiple intervals
+    flashing = true;
+
+    let flashInterval = setInterval(() => {
+        document.title = document.title === messages[currentMessageIndex] ? originalTitle : messages[currentMessageIndex];
+        currentMessageIndex = (currentMessageIndex + 1) % messages.length; // Cycle through messages
+    }, 1000);
+
+    // Stop flashing after 10 seconds (optional)
+    setTimeout(() => {
+        clearInterval(flashInterval);
+        document.title = originalTitle;
+        flashing = false;
+    }, 10000); // 10 seconds duration
+}
+
+// Flashing messages
+window.onblur = () => flashTitle();
+</script>
+    </body>
+</html>
